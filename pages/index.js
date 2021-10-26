@@ -7,21 +7,20 @@ import Paragraph from "../components/Paragraph";
 
 import strings from "../misc/strings.json";
 import PhraseSolvingPane from "../components/PhraseSolvingPane";
+import CharTablePane from "../components/CharTablePane";
 
 let step = 2;
 // 0 => display name and game code input
 // 1 => waiting for game to start
 // 2 => game phase 1 (ascii encoding)
 // 3 => waiting for phase 1 end (triggered after one player done with previous phase or 180s and then waits 30s)
-// 4 => game phase 2 (unicode encoding)
+// 4 => game phase 2 (trivia questions / quiz)
 // 5 => waiting for phase 2 end (triggered after one player done with previous phase or 180s and then waits 30s)
-// 6 => trivia questions / quiz
-// 7 => waiting for phase 3 end (triggered after one player done with previous phase or 180s and then waits 30s)
-// 8 => results
+// 6 => results
 
 const Index = () => {
     return (
-        <DefaultContainer isContentCentered={step !== 2 && step !== 4}>
+        <DefaultContainer isContentCentered={step !== 2 && step !== 4} sidePaneContent={step === 2 && <CharTablePane />}>
             <Heading1>
                 {step <= 1 && strings.siteTitle}
                 {step > 1 && step <= 3 && strings.ascii}
@@ -42,12 +41,12 @@ const Index = () => {
             {step === 0 && <DisplayNameInputPane />}
             {step === 1 && <Byline>{strings.waitingForGame}</Byline>}
             {step === 2 && <PhraseSolvingPane characters={[
-                "H",
-                "E",
-                "L",
-                "L",
-                "O"
-            ]} />}
+                { character: "H", solution: "01001000" },
+                { character: "E", solution: "01000101" },
+                { character: "L", solution: "01001100" },
+                { character: "L", solution: "01001100" },
+                { character: "O", solution: "01001111" },
+            ]} onFinish={() => console.log("finish")} />}
         </DefaultContainer>
     )
 }
