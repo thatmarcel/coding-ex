@@ -1,0 +1,19 @@
+{
+    "gameLink": "coding-ex.strg.space",
+    "siteTitle": "Codierung",
+    "siteSubtitle": "ASCII & Unicode",
+    "ascii": "ASCII",
+    "asciiSubtitle": "American Standard Code for Information Interchange",
+    "unicode": "Unicode",
+    "unciodeSubtitle": "codiert in UTF-8",
+    "gameIntroduction": "Teste deine Codierungskentnisse und versuche, die folgenden Buchstaben so schnell wie möglich in den Binärcode zu übersetzen. Du trittst gegen die anderen Spieler an und versuchst die beste Zeit zu erreichen.",
+    "displayNameInputPlaceholder": "Anzeigename",
+    "gameCodeInputPlaceholder": "Game-Code",
+    "createNewGame": "Neues Spiel erstellen",
+    "newGameCodeDisplayBefore": "Gebe",
+    "newGameCodeDisplayBetween": "auf",
+    "newGameCodeDisplayAfter": "ein, um dem Spiel beizutreten",
+    "continue": "Weiter",
+    "letsGo": "Los geht's",
+    "waitingForGame": "Auf Spielbeginn warten..."
+}
