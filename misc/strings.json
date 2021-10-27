@@ -13,7 +13,10 @@
     "newGameCodeDisplayBefore": "Gebe",
     "newGameCodeDisplayBetween": "auf",
     "newGameCodeDisplayAfter": "ein, um dem Spiel beizutreten",
-    "continue": "Weiter",
     "letsGo": "Los geht's",
-    "waitingForGame": "Auf Spielbeginn warten..."
+    "waitingForGame": "Auf Spielbeginn warten...",
+    "waitingForBackendSocketConnection": "Verbinden...",
+    "points": "Punkte",
+    "startGame": "Spiel starten",
+    "gameEnded": "Spielende"
 }

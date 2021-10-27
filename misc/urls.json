@@ -1,0 +1,3 @@
+{
+    "backendSocket": "ws://localhost:4000"
+}
