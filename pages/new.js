@@ -17,7 +17,7 @@ const New = () => {
     const [gameId, setGameId] = useState(null);
     const [players, setPlayers] = useState([]);
     const [hasGameStarted, setGameStarted] = useState(false);
-    const [gameSecondsLeft, setGameSecondsLeft] = useState(10);
+    const [gameSecondsLeft, setGameSecondsLeft] = useState(300);
 
     useEffect(() => {
         if (ws || !(typeof window)) { return; }
@@ -33,7 +33,7 @@ const New = () => {
         }
 
         let __players = [];
-        let __gameSecondsLeft = 10;
+        let __gameSecondsLeft = 300;
         let __gameId;
           
         socket.onmessage = event => {
