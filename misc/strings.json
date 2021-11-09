@@ -18,5 +18,8 @@
     "waitingForBackendSocketConnection": "Verbinden...",
     "points": "Punkte",
     "startGame": "Spiel starten",
-    "gameEnded": "Spielende"
+    "gameEnded": "Spielende",
+    "sourceCodeLinksBefore": "Source Code (Github):",
+    "sourceCodeLinkFrontend": "Frontend",
+    "sourceCodeLinkBackend": "Backend"
 }

@@ -39,6 +39,20 @@ const DisplayNameInputPane = ({ className, onSubmit }) => {
                     {strings.createNewGame}
                 </a>
             </Link>
+
+            <div className="mt-16">
+                <span className="text-gray-500 font-bold">
+                    {strings.sourceCodeLinksBefore}
+                </span>
+                
+                <a href="https://github.com/thatmarcel/coding-ex" target="_blank" className="ml-4 text-gray-500 font-bold underline">
+                    {strings.sourceCodeLinkFrontend}
+                </a>
+
+                <a href="https://github.com/thatmarcel/coding-ex-backend" target="_blank" className="ml-4 text-gray-500 font-bold underline">
+                    {strings.sourceCodeLinkBackend}
+                </a>
+            </div>
         </div>
     )
 }
