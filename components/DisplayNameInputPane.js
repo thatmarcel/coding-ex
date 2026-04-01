@@ -15,14 +15,14 @@ const DisplayNameInputPane = ({ className, onSubmit }) => {
                 value={displayName}
                 onChange={event => setDisplayName(event.target.value)}
                 className="border-2 border-gray-500 rounded-xl h-12 px-4 outline-none focus:outline-none focus:border-4 transition-all mr-4 mb-4" />
-        
+
             <input
                 type="text"
                 placeholder={strings.gameCodeInputPlaceholder}
                 value={gameCode}
                 onChange={event => setGameCode(event.target.value)}
                 className="w-48 border-2 border-gray-500 rounded-xl h-12 px-4 outline-none focus:outline-none focus:border-4 transition-all mr-4 mb-4" />
-        
+
             <button onClick={() => {
                 onSubmit({
                     displayName: displayName,
@@ -34,7 +34,7 @@ const DisplayNameInputPane = ({ className, onSubmit }) => {
 
             <br />
 
-            <Link href="/new">
+            <Link href="/new" legacyBehavior>
                 <a className="mt-2 text-gray-500 font-bold underline">
                     {strings.createNewGame}
                 </a>
@@ -44,7 +44,7 @@ const DisplayNameInputPane = ({ className, onSubmit }) => {
                 <span className="text-gray-500 font-bold">
                     {strings.sourceCodeLinksBefore}
                 </span>
-                
+
                 <a href="https://github.com/thatmarcel/coding-ex" target="_blank" className="ml-4 text-gray-500 font-bold underline">
                     {strings.sourceCodeLinkFrontend}
                 </a>
