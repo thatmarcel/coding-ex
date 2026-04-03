@@ -32,10 +32,18 @@ const New = () => {
             }));
         }
 
+        socket.onclose = () => {
+            document.location.reload();
+        }
+
+        socket.onerror = () => {
+            document.location.reload();
+        }
+
         let __players = [];
         let __gameSecondsLeft = 300;
         let __gameId;
-          
+
         socket.onmessage = event => {
             const message = event.data;
             const json = JSON.parse(message);
@@ -148,7 +156,7 @@ const New = () => {
                             action: "start_game",
                             gameId: gameId
                         }));
-                    }} className="rounded-xl h-12 px-12 bg-gray-500 text-white font-bold hover:border-2 hover:border-gray-500 hover:bg-white hover:text-gray-700 transition-all mb-12">
+                    }} className="cursor-pointer rounded-xl h-12 px-12 bg-gray-500 text-white font-bold hover:border-2 hover:border-gray-500 hover:bg-white hover:text-gray-700 transition-all mb-12">
                         {strings.startGame}
                     </button>
                 </div>

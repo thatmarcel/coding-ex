@@ -4,24 +4,24 @@ import strings from "../misc/strings.json";
 
 const DefaultContainer = ({ children, isContentCentered, sidePaneContent }) => {
     return (
-        <div className="w-screen h-screen flex">
-            <div className={`p-16 ${isContentCentered ? "m-auto" : ""} transition block min-h-screen w-full max-w-[1400px] flex-shrink-0`} style={{
+        <div className="w-full h-full flex">
+            <div className={`lg:p-16 lg:pt-20 md:p-12 p-8 ${isContentCentered ? "m-auto" : ""} transition block min-h-full w-full max-w-[1400px] flex-shrink-[0.2]`} style={{
                 fontFamily: "'Zen Kaku Gothic New', sans-serif"
             }}>
                 {children}
             </div>
 
             {sidePaneContent &&
-                <div className="h-screen w-full p-16">
+                <div className="h-screen w-full py-9 pr-8 flex-shrink-[0.8] hidden md:block">
                     {sidePaneContent}
                 </div>
             }
 
             <Head>
-                <link rel="preconnect" href="https://fonts.googleapis.com" />
-                <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-                <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
-            
+                <link rel="preconnect" href="https://fonts.bunny.net" crossOrigin="true" />
+
+                <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
                 <title>{strings.siteTitle}</title>
             </Head>
         </div>

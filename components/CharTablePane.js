@@ -105,16 +105,40 @@ const entries = [
 
 const CharTablePane = ({ className }) => {
     return (
-        <div className={`bg-gray-400 px-2 rounded-2xl h-full ${className || ""}`}>
-            <div className="h-full w-full pt-24 flex flex-wrap justify-center overflow-y-scroll" style={{
-                scrollbarColor: "#6B7280 transparent"
+        <div className={`relative bg-gray-400 rounded-2xl w-full h-full ${className || ""}`}>
+            <style>{`
+                div::-webkit-scrollbar {
+                    width: calc(var(--spacing) * 3.75);
+                }
+
+                div::-webkit-scrollbar-thumb {
+                    background-color: var(--color-gray-500);
+                    border-radius: calc(infinity * 1px);
+                    border: solid 3.5px transparent;
+                    background-clip: content-box;
+                }
+
+                div::-webkit-scrollbar-track {
+                    background-color: transparent;
+                    margin-top: calc(var(--spacing) * 3.25);
+                    margin-bottom: calc(var(--spacing) * 3.25);
+                }
+            `}</style>
+            <div id="amogus" className="absolute top-0 bottom-0 right-0 left-0 mr-0.25 justify-center overflow-y-scroll" style={{
+                scrollbarGutter: "stable both-edges",
+                scrollbarColor: "" // "green yellow"
             }}>
-                {entries.map(entry =>
-                    <CharTableEntry
-                        character={entry.character}
-                        hexValue={entry.hex}
-                        />
-                )}
+                <div className="mt-4 pr-1 px-0.25 h-full w-full gap-4 flex flex-wrap">
+                    {entries.map(entry =>
+                        <CharTableEntry
+                            key={`char-table-entry-${entry.hex}`}
+                            character={entry.character}
+                            hexValue={entry.hex}
+                            />
+                    )}
+
+                    <div className="h-1 -mt-1 w-full" />
+                </div>
             </div>
         </div>
     )

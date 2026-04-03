@@ -35,7 +35,35 @@ const CharacterBitInput = ({ className, index, autoFocus, onChange }) => {
 
                 onChange();
             }}
-            className={`character-bit-input w-8 h-8 md:w-12 md:h-12 lg:w-24 lg:h-24 select-none caret-transparent mr-8 font-black text-2xl md:text-5xl text-center rounded-xl border-0 border-gray-400 rounded-xl h-12 px-4 outline-none focus:outline-none focus:border-4 transition-all ${className || ""}`}
+            type="number"
+            min={0}
+            max={1}
+            step={1}
+            pattern="[0-9]*"
+            className={`
+                [&::-webkit-inner-spin-button]:appearance-none
+                character-bit-input
+                w-12
+                h-12
+                lg:w-20
+                lg:h-20
+                lg:pb-2
+                pb-1
+                select-none
+                caret-transparent
+                font-black
+                text-3xl
+                lg:text-5xl
+                text-center
+                text-white
+                rounded-xl
+                outline-0
+                outline-gray-400
+                md:px-4
+                focus:outline-4
+                transition-all
+                ${className || ""}
+            `.split("\n").map(s => s.trim()).join(" ")}
             />
     )
 }

@@ -14,14 +14,15 @@ const DisplayNameInputPane = ({ className, onSubmit }) => {
                 placeholder={strings.displayNameInputPlaceholder}
                 value={displayName}
                 onChange={event => setDisplayName(event.target.value)}
-                className="border-2 border-gray-500 rounded-xl h-12 px-4 outline-none focus:outline-none focus:border-4 transition-all mr-4 mb-4" />
+                className="outline-2 outline-gray-500 rounded-xl h-10 pb-0.5 px-4 focus:outline-4 transition-all mr-4 mb-4" />
 
             <input
                 type="text"
+                pattern="[0-9]*"
                 placeholder={strings.gameCodeInputPlaceholder}
                 value={gameCode}
                 onChange={event => setGameCode(event.target.value)}
-                className="w-48 border-2 border-gray-500 rounded-xl h-12 px-4 outline-none focus:outline-none focus:border-4 transition-all mr-4 mb-4" />
+                className="w-48 outline-2 outline-gray-500 rounded-xl h-10 pb-0.5 px-4 focus:outline-4 transition-all mr-4 mb-4" />
 
             <button onClick={() => {
                 onSubmit({
@@ -34,10 +35,8 @@ const DisplayNameInputPane = ({ className, onSubmit }) => {
 
             <br />
 
-            <Link href="/new" legacyBehavior>
-                <a className="mt-2 text-gray-500 font-bold underline">
-                    {strings.createNewGame}
-                </a>
+            <Link href="/new" className="mt-2 text-gray-500 font-bold underline">
+                {strings.createNewGame}
             </Link>
 
             <div className="mt-16">

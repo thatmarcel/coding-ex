@@ -1,14 +1,16 @@
-const CharTableEntry = ({ className, character, hexValue }) => {
+const CharTableEntry = ({ character, hexValue }) => {
     return (
-        <div>
-            <input
-                value={character}
-                disabled={true}
-                className={`w-8 h-12 md:w-12 md:h-20 lg:w-24 lg:h-32 mr-8 mb-8 select-none font-black text-white text-2xl md:text-5xl text-center rounded-xl bg-gray-600 rounded-xl h-12 px-4 pb-8 ${className}`}
-                />
-            <span className="block text-center mr-8 -mt-20 mb-16 pt-2 text-white font-bold select-none">
-                0x{hexValue}
-            </span>
+        <div className="grow select-none w-14 h-20 lg:w-24 lg:h-32 rounded-xl bg-gray-600 text-center flex items-center">
+            <div className="text-center mx-auto">
+                <span
+                    className="font-black text-white text-2xl md:text-3xl lg:text-5xl"
+                >
+                    {character}
+                </span>
+                <span className="block text-center pt-1 md:pt-0 lg:pt-2 text-white font-bold text-4xl text-sm md:text-base lg:text-lg">
+                    0x{hexValue}
+                </span>
+            </div>
         </div>
     )
 }

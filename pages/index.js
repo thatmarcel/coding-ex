@@ -30,16 +30,20 @@ const Index = () => {
 
         socket.onopen = () => {
             setWsConnected(true);
-            console.log("WebSocket connected");
         }
-          
+
+        socket.onclose = () => {
+            setStep(3);
+        }
+
+        socket.onerror = () => {
+            setStep(3);
+        }
+
         socket.onmessage = event => {
             const message = event.data;
             const json = JSON.parse(message);
             if (!json || !json["action"]) { return; }
-
-            console.log("Received JSON message");
-            console.log(json);
 
             switch (json["action"]) {
                 case "join_game_result": {
@@ -79,17 +83,17 @@ const Index = () => {
                 {step !== 1 && strings.siteTitle}
                 {step === 1 && strings.ascii}
             </Heading1>
-            <Heading3 className="mb-16">
+            <Heading3 className="mb-8 lg:mb-16">
                 {step !== 1 && strings.siteSubtitle}
                 {step === 1 && strings.asciiSubtitle}
             </Heading3>
 
             {step <= 1 &&
-                <Paragraph className="mt-16 mb-16">
+                <Paragraph className="mt-8 lg:mt-16 mb-12 lg:mb-16">
                     {strings.gameIntroduction}
                 </Paragraph>
             }
-            
+
             {step === 0 &&
                 (isWsConnected
                 ? <DisplayNameInputPane onSubmit={({ displayName, gameCode }) => {
