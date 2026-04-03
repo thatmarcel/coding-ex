@@ -29,7 +29,7 @@ const DisplayNameInputPane = ({ className, onSubmit }) => {
                     displayName: displayName,
                     gameCode: gameCode
                 })
-            }} className="rounded-xl h-12 px-12 bg-gray-500 text-white font-bold hover:border-2 hover:border-gray-500 hover:bg-white hover:text-gray-700 transition-all mb-4">
+            }} className="cursor-pointer rounded-xl h-12 px-12 bg-gray-500 text-white font-bold hover:border-2 hover:border-gray-500 hover:bg-white hover:text-gray-700 transition-all mb-4">
                 {strings.letsGo}
             </button>
 
